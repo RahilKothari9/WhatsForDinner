@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from '../config/firebase';
 
-export default function Dashboard({sectionId, setSectionId}) {
+export default function Section({sectionId, setSectionId}) {
   const [error, setError] = useState("")
   const { currentUser, logout } = useAuth()
   const navigate = useNavigate()
@@ -23,19 +23,13 @@ export default function Dashboard({sectionId, setSectionId}) {
     } 
   }
 
-  const q = query(collection(db, "Category"), where("user_id", "==", currentUser.uid));
-  const querySnapshot = getDocs(q);
-  // console.log(querySnapshot);
-  // querySnapshot.forEach((doc) => {
-  //   console.log(doc.id, " => ", doc.data());
-  // });
   const [linkArr, setLinkArr] = useState([]);
 
   useEffect(() => {
 
     const getLinks = async() => 
     {
-        const q = query(collection(db, "Category"), where("user_id", "==", currentUser.uid));
+        const q = query(collection(db, "Dishes"), where("category_id", "==", sectionId));
         const docSnap = await getDocs(q);
 
         const arr = [];
@@ -53,9 +47,11 @@ export default function Dashboard({sectionId, setSectionId}) {
   
 
   return (
+    
     <div>
-      <Link to="/addcategory">Add A Category!</Link>
-    <Button variant="contained" onClick={handleLogout}>Logout</Button>
+        <h1>Hi</h1>
+      <Link to="/addadish">Add A Dish!</Link>
+    
     <div>
     <Grid container direction="column" spacing={2} justifyContent="center">
           {linkArr.map((item) => (
@@ -65,9 +61,8 @@ export default function Dashboard({sectionId, setSectionId}) {
                 color="primary"
                 className="hellobutton"
                 onClick={() => {
-                  setSectionId(item.id)
                   console.log(item.id);
-                  navigate(`section`)
+                //   navigate(`section/${item.id}`)
                 }
               }
                 
