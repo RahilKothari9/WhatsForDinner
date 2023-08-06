@@ -9,12 +9,26 @@ import { useState } from 'react'
 import Section from './components/Section'
 import AddItem from './components/AddItem'
 import Private from './components/Private'
+import { ThemeProvider } from '@emotion/react'
 
 function App() {
     const [sectionId, setSectionId] = useState("")
+    // const theme = createTheme({
+    //   components: {
+        
+    //     MuiTextField: {
+    //       styleOverrides: {
+    //         root: {
+    //           font-family: 'Barlow Semi Condensed',
+
+    //         },
+    //       },
+    //     },
+    //   },
+    // });
   return (
     <>
-      <div>
+      <div className='wrapper'>
         <Router>
           <AuthProvider>
             <Routes>
@@ -36,7 +50,7 @@ function App() {
           </AuthProvider>
         </Router>
       </div>
-      <h4>Hi</h4>
+      {/* <h4>Hi</h4> */}
     </>
   )
 }

@@ -1,8 +1,9 @@
 import React, {useState, useRef} from 'react';
-import { TextField, Button, Container, Stack, Alert } from '@mui/material';
+import { TextField, Button, Container, Stack, Alert, Card } from '@mui/material';
 import { Link, useNavigate } from "react-router-dom"
 import { useAuth } from '../contexts/AuthContext';
 import { AuthProvider } from '../contexts/AuthContext';
+import '../App.css'
 
 import {createUserWithEmailAndPassword} from "firebase/auth";
 import { auth } from "../config/firebase"
@@ -49,30 +50,31 @@ const Signup = () => {
  
     return (
         <AuthProvider>
-            <React.Fragment>
-            <h2>Register</h2>
+            <React.Fragment >
+                <Card className='formWrapper'>
+            <h1>Sign Up to WhatsForDinner</h1>
             {/* {JSON.stringify({currentUser})} */}
-            {error && <Alert severity="error">{error}</Alert>}
-            <form onSubmit={handleSubmit} action={<Link to="/login" />}>
-                
+            {error && <Alert severity="error" sx={{mb: 2}}>{error}</Alert>}
+            <form onSubmit={handleSubmit} action={<Link to="/login" />} className='font'>
+             
                 <TextField
                     type="email"
-                    variant='outlined'
+                    
                     color='secondary'
                     label="Email"
-                    
+                    className='font'
                     inputRef={emailRef}
-                    
                     fullWidth
                     required
                     sx={{mb: 4}}
                 />
+            
                 <TextField
                     type="password"
                     variant='outlined'
                     color='secondary'
                     label="Password"
-                    
+                    className='font'
                     inputRef={passwordRef}
                     
                     required
@@ -92,10 +94,10 @@ const Signup = () => {
                     sx={{mb: 4}}
                 />
                 
-                <Button disabled= {loading} variant="outlined" color="secondary" type="submit">Register</Button>
+                <Button disabled= {loading} variant="outlined" className='font submitButton' type="submit">Register</Button>
             </form>
-            <small>Already have an account? <Link to="/login">Login Here</Link></small>
-     
+            <div>Already have an account? <Link to="/login">Login Here</Link></div>
+            </Card>
         </React.Fragment>
         </AuthProvider>
         
