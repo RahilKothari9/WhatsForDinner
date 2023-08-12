@@ -35,7 +35,8 @@ const AddSection = () => {
  
     return (
         <AuthProvider>
-            <React.Fragment>
+            <React.Fragment >
+            <div className='formWrapper'>
             <h2>Add A Category!</h2>
             
             <form onSubmit={handleSubmit}>
@@ -54,8 +55,9 @@ const AddSection = () => {
                 />
                 
                 
-                <Button disabled= {loading} variant="outlined" color="secondary" type="submit">Add Category</Button>
+                <Button disabled= {loading} variant="outlined" color="secondary" type="submit" className='submitButton font'>Add Category</Button>
             </form>
+            </div>
      
         </React.Fragment>
         </AuthProvider>

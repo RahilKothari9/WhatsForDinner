@@ -84,10 +84,11 @@ h2 {
 
 .hellobutton {
   width: 50vw;
-  height: 4.5rem;
+  height: 14vmin;
+  max-height: 4.75rem;
   background-color: #17252A !important;
-  border-radius: 1.5rem !important;
-  font-size: 2.6vw !important;
+  border-radius: 6vmin !important;
+  font-size: 5vmin !important;
   font-family: 'Barlow Semi Condensed', sans-serif !important;
   text-transform: none !important;
   margin: 0.5rem !important;
@@ -114,4 +115,18 @@ h2 {
   padding: 2rem;
   
   justify-content: space-evenly;
+}
+
+.adderbutton {
+  width: 35vmin;
+  height: 10vmin;
+  max-height: 3rem;
+  background-color: #DEF2F1 !important;
+  border-radius: 4.5vmin !important;
+  font-size: 3.5vmin !important;
+  font-family: 'Barlow Semi Condensed', sans-serif !important;
+  text-transform: none !important;
+  margin: 0.5rem !important;
+  color: #17252A !important;
+  font-weight: 500 !important;
 }

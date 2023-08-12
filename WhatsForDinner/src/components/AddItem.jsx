@@ -17,11 +17,17 @@ const AddItem = ({sectionId, setSectionId}) => {
     const [loading, setLoading] = useState(false)
     const dbRef = collection(db, "Dishes")
     const history = useNavigate()
+
+    // to get section id
+    const i = window.location.pathname;
+    const id = i.substring(10);
+
+
     async function handleSubmit(e) {
         e.preventDefault();
         const data = {
             name: dishNameRef.current.value,
-            category_id: sectionId,
+            category_id: id,
             description: dishDescRef.current.value
          };
          addDoc(dbRef, data)
@@ -32,12 +38,13 @@ const AddItem = ({sectionId, setSectionId}) => {
              console.log(error);
          })
         setLoading(false);
-        history('/section')
+        history(`/section/${id}`)
     }
  
     return (
         <AuthProvider>
             <React.Fragment>
+            <div className='formWrapper'>
             <h2>Add An Item!</h2>
             
             <form onSubmit={handleSubmit}>
@@ -68,8 +75,9 @@ const AddItem = ({sectionId, setSectionId}) => {
                 />
                 
                 
-                <Button disabled= {loading} variant="outlined" color="secondary" type="submit">Add Item</Button>
+                <Button disabled= {loading} variant="outlined" color="secondary" type="submit" className='submitButton font'>Add Item</Button>
             </form>
+            </div>
      
         </React.Fragment>
         </AuthProvider>

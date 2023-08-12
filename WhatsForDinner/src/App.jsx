@@ -29,10 +29,10 @@ function App() {
                     <Route exact path='/' element={<Dashboard sectionId={sectionId} setSectionId={setSectionId}/>}/>
               </Route>
               <Route path='/section' element={<Private/>}>
-                    <Route path='/section' element={<Section sectionId={sectionId} setSectionId={setSectionId}/>}/>
+                    <Route path='/section/:section_id' element={<Section />}/>
               </Route>
               <Route exact path='/addadish' element={<Private/>}>
-                    <Route path='/addadish' element={<AddItem sectionId={sectionId} setSectionId={setSectionId}/>}/>
+                    <Route path='/addadish/:section_id' element={<AddItem sectionId={sectionId} setSectionId={setSectionId}/>}/>
               </Route>
               <Route exact path='/addcategory' element={<Private/>}>
                     <Route exact path='/addcategory' element={<AddSection/>}/>

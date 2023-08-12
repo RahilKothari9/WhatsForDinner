@@ -60,11 +60,22 @@ export default function Dashboard({sectionId, setSectionId}) {
 
   return (
     <>
-    <Button variant="contained" onClick={handleLogout} className='logout'>  Logout</Button>
+    {/* <Button variant="contained" onClick={handleLogout} className='logout'>  Logout</Button> */}
     <div>
-      <Link to="/addcategory">Add A Category!</Link>
-    
     <div>
+    <Button
+                variant="contained"
+                color="primary"
+                className="adderbutton"
+                onClick={() => {
+                  console.log("HI");
+                  navigate(`/addcategory`)
+                }
+              }
+                
+              >
+                Add a Category!
+      </Button>
     <Grid container direction="column" spacing={2} justifyContent="center">
           {linkArr.map((item) => (
             <Grid item key={item.id} xs={12} sm={6} md={4} lg={10}>
@@ -75,7 +86,8 @@ export default function Dashboard({sectionId, setSectionId}) {
                 onClick={() => {
                   setSectionId(item.id)
                   console.log(item.id);
-                  navigate(`section`)
+                  
+                  navigate(`section/` + item.id)
                 }
                 
               }
