@@ -52,7 +52,7 @@ const Signup = () => {
         <AuthProvider>
             <React.Fragment >
                 <Card className='formWrapper'>
-            <h1>Sign Up to WhatsForDinner</h1>
+            <h2>Sign Up </h2>
             {/* {JSON.stringify({currentUser})} */}
             {error && <Alert severity="error" sx={{mb: 2}}>{error}</Alert>}
             <form onSubmit={handleSubmit} action={<Link to="/login" />} className='font'>

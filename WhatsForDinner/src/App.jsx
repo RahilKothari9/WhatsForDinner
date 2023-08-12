@@ -10,25 +10,18 @@ import Section from './components/Section'
 import AddItem from './components/AddItem'
 import Private from './components/Private'
 import { ThemeProvider } from '@emotion/react'
+import Header from './components/Header'
 
 function App() {
     const [sectionId, setSectionId] = useState("")
-    // const theme = createTheme({
-    //   components: {
-        
-    //     MuiTextField: {
-    //       styleOverrides: {
-    //         root: {
-    //           font-family: 'Barlow Semi Condensed',
 
-    //         },
-    //       },
-    //     },
-    //   },
-    // });
   return (
     <>
       <div className='wrapper'>
+        <AuthProvider>
+          <Header/>
+        </AuthProvider>
+        
         <Router>
           <AuthProvider>
             <Routes>

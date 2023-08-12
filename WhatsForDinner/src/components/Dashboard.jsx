@@ -6,6 +6,12 @@ import { Link } from 'react-router-dom';
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from '../config/firebase';
 
+const buttonSX = {
+  "&:hover": {
+    boxShadow: 10,
+  },
+};
+
 export default function Dashboard({sectionId, setSectionId}) {
   const [error, setError] = useState("")
   const { currentUser, logout } = useAuth()
@@ -53,9 +59,11 @@ export default function Dashboard({sectionId, setSectionId}) {
   
 
   return (
+    <>
+    <Button variant="contained" onClick={handleLogout} className='logout'>  Logout</Button>
     <div>
       <Link to="/addcategory">Add A Category!</Link>
-    <Button variant="contained" onClick={handleLogout}>Logout</Button>
+    
     <div>
     <Grid container direction="column" spacing={2} justifyContent="center">
           {linkArr.map((item) => (
@@ -69,8 +77,9 @@ export default function Dashboard({sectionId, setSectionId}) {
                   console.log(item.id);
                   navigate(`section`)
                 }
-              }
                 
+              }
+              sx ={buttonSX}
                 // onMouseOver={}
               >
                 {item.name}
@@ -81,5 +90,6 @@ export default function Dashboard({sectionId, setSectionId}) {
     </div>
     
     </div>
+    </>
   )
 }

@@ -20,10 +20,19 @@
 }
 
 .submitButton {
-  margin: 1rem !important;
-  font-size: 1.25rem !important;
+  margin: 1.3vmin !important;
+  font-size: 3vmin !important;
   background-color: #17252a !important;
   border-radius: 5% important;
+}
+
+.logout {
+  margin: 1rem !important;
+  font-size: 0.75rem !important;
+  background-color: #17252a !important;
+  border-radius: 20% important;
+  position: absolute;
+  margin-top: -5vmin !important;
 }
 
 .wrapper {
@@ -39,7 +48,12 @@
 }
 
 h1 {
-  font-size: clamp(6vmin, 8vmin, 6.75vmin);
+  font-size: 7.5vmin;
+  margin: 0;
+  margin-bottom: 1.5rem;
+}
+h2 {
+  font-size: 5vmin;
   margin: 0;
   margin-bottom: 1.5rem;
 }
@@ -56,4 +70,48 @@ h1 {
 
 &.MuiTextField-root {
   background-color: #2B7a78;
+}
+
+.App-logo {
+  height: auto;
+  width: 8.5rem;
+}
+
+.heading{
+  margin-top: -1.5rem;
+  margin-bottom: 1rem;
+}
+
+.hellobutton {
+  width: 50vw;
+  height: 4.5rem;
+  background-color: #17252A !important;
+  border-radius: 1.5rem !important;
+  font-size: 2.6vw !important;
+  font-family: 'Barlow Semi Condensed', sans-serif !important;
+  text-transform: none !important;
+  margin: 0.5rem !important;
+  color: #fff !important;
+  font-weight: 500 !important;
+}
+
+.foodcard {
+  background-color: #17252A !important;
+  border-radius: 1.5rem !important;
+  font-family: 'Barlow Semi Condensed', sans-serif !important;
+  text-transform: none !important;
+  margin: 0.5rem !important;
+  color: #fff !important;
+  font-weight: 500 !important;
+}
+
+.foodwrapper {
+  max-width: 85vw;
+  width: 100vw;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+  
+  justify-content: space-evenly;
 }
