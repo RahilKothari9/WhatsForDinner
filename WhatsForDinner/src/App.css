@@ -28,11 +28,12 @@
 
 .logout {
   margin: 1rem !important;
-  font-size: 0.75rem !important;
-  background-color: #17252a !important;
+  font-size: 1.1rem !important;
+  color: #17252A!important;
   border-radius: 20% important;
   position: absolute;
-  margin-top: -5vmin !important;
+  margin-top: -6vmin !important;
+  font-family: 'Barlow Semi Condensed', sans-serif !important;
 }
 
 .wrapper {

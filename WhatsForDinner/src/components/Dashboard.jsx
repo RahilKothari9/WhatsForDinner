@@ -60,7 +60,7 @@ export default function Dashboard({sectionId, setSectionId}) {
 
   return (
     <>
-    <Button variant="contained" onClick={handleLogout} className='logout'>  Logout</Button>
+    <Button  onClick={handleLogout} className='logout'>  Logout</Button>
     <div>
     <div>
     <Button
