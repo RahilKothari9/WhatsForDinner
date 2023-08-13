@@ -3,7 +3,7 @@ import { Button, Alert, Grid } from '@mui/material';
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { collection, query, where, getDocs } from "firebase/firestore";
+import { collection, query, where, getDocs, deleteDoc, doc } from "firebase/firestore";
 import { db } from '../config/firebase'
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -13,6 +13,7 @@ import '../App.css'
 
 export default function Section({params}) {
   const [error, setError] = useState("")
+  const [delCount, setDelCount] = useState(0)
   const { currentUser, logout } = useAuth()
   const navigate = useNavigate()
   const history = useNavigate()
@@ -29,6 +30,8 @@ export default function Section({params}) {
       setError("Failed to log out")
     } 
   }
+
+
 
   const [linkArr, setLinkArr] = useState([]);
 
@@ -51,14 +54,18 @@ export default function Section({params}) {
     };
 
     getLinks();
-  }, []);
+  }, [delCount]);
+
+  const delay = ms => new Promise(
+    resolve => setTimeout(resolve, ms)
+  );
 
   
 
   return (
     
     <div>
-      
+      {error && <Alert onClose={() => {setError("")}} severity="error" sx={{mb: 2}}>{error}</Alert>}
       <Button
                 variant="contained"
                 color="primary"
@@ -77,7 +84,7 @@ export default function Section({params}) {
           {linkArr.map((item) => (
             <Grid item key={item.id} xs={12} sm={6} md={4} lg={10}>
               
-              <Card sx={{ minWidth: 300 }} className='foodcard'>
+              <Card sx={{ minWidth: 250 }} className='foodcard'>
                 <CardContent>
                 
                   <h2>{item.name}</h2>
@@ -86,7 +93,20 @@ export default function Section({params}) {
                   
                 </CardContent>
                 <CardActions>
-                  <Button size="small">Learn More</Button>
+                  <Button size="small" className='font delButton' 
+                  onClick={
+                    async () => {
+                      const q = query(doc(db, "Dishes", item.id));
+                      const docSnap = await deleteDoc(q);
+                      setDelCount(delCount + 1)
+                      await delay(800); 
+                      // setError(item.name + " Has Been Deleted")
+                      // await delay(5000)
+                      // setError("")
+                      
+                    }
+                    }>
+                      DELETE</Button>
                 </CardActions>
               </Card>
             </Grid>

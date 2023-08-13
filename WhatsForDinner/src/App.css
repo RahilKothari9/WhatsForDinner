@@ -68,6 +68,7 @@ h2 {
   border-radius: 2rem !important;
 }
 
+
 &.MuiTextField-root {
   background-color: #2B7a78;
 }
@@ -108,13 +109,13 @@ h2 {
 
 .foodwrapper {
   max-width: 85vw;
-  width: 100vw;
+  width: 85vw;
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
   padding: 2rem;
   
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .adderbutton {
@@ -129,4 +130,8 @@ h2 {
   margin: 0.5rem !important;
   color: #17252A !important;
   font-weight: 500 !important;
+}
+
+.delButton {
+  color:#3aafa9!important;
 }
