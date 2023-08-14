@@ -17,6 +17,7 @@ export default function Dashboard({sectionId, setSectionId}) {
   const { currentUser, logout } = useAuth()
   const navigate = useNavigate()
   const history = useNavigate()
+  const [longState, setLongState] = useState("long-text")
 
   async function handleLogout() {
     setError("")
@@ -102,6 +103,16 @@ export default function Dashboard({sectionId, setSectionId}) {
     </div>
     
     </div>
+    <div className="right-corder-container">
+    <button className="right-corder-container-button"
+      onMouseEnter={()=>setLongState("long-text show-long-text")}
+      onMouseLeave={()=>setLongState("long-text")}
+    >
+        <span className="short-text">?</span>
+        <span className={longState} id="test">Random Dish!</span>
+    </button>
+  </div>
+  
     </>
   )
 }
