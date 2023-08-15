@@ -71,7 +71,7 @@ const AddItem = ({sectionId, setSectionId}) => {
                     inputRef={dishDescRef}
                     
                     fullWidth
-                    required
+                    
                     sx={{mb: 4}}
                 />
                 
