@@ -38,7 +38,7 @@ const Login = () => {
             <React.Fragment>
                 <Card className='formWrapper'>
             <h2>Login </h2>
-            {currentUser && currentUser.email}
+            
             {error && <Alert severity="error" sx={{mb: 2}}>{error}</Alert>}
             <form onSubmit={handleSubmit} action={<Link to="/login" />} className='font'>
                 

@@ -200,8 +200,7 @@ width: auto;
 }
 
 .foodcarder {
-  width: 50vmin;
-  height: 40vmin;
+  padding: 1vmin;
   background-color: #2B7a78 !important;
   border-radius: 2rem !important;
   font-family: 'Barlow Semi Condensed', sans-serif !important;
@@ -213,6 +212,9 @@ width: auto;
 
 .foodcarder h2 {
   font-size: 9vmin;
+  overflow-wrap: break-word;  
+  word-wrap: break-word; 
+  word-break: break-word;
 }
 
 .foodcarder h3 {
