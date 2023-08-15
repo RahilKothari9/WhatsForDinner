@@ -28,7 +28,8 @@ const AddItem = ({sectionId, setSectionId}) => {
         const data = {
             name: dishNameRef.current.value,
             category_id: id,
-            description: dishDescRef.current.value
+            description: dishDescRef.current.value,
+            user_id: currentUser.uid
          };
          addDoc(dbRef, data)
          .then(docRef => {

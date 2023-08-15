@@ -11,25 +11,15 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import '../App.css'
 
-export default function Section({params}) {
+export default function Section() {
   const [error, setError] = useState("")
   const [delCount, setDelCount] = useState(0)
   const { currentUser, logout } = useAuth()
   const navigate = useNavigate()
-  const history = useNavigate()
   const i = window.location.pathname;
   const id = i.substring(9);
   const redirectPath = "/addadish/" + id;
-  async function handleLogout() {
-    setError("")
-
-    try {
-      await logout()
-      history('/login')
-    } catch {
-      setError("Failed to log out")
-    } 
-  }
+  
 
 
 

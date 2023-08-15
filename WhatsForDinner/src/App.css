@@ -194,3 +194,30 @@ margin-left: 45px;
 font-size: 20px;                          
 width: auto;                              
 }
+
+.randomtext {
+  color: #17252A;
+}
+
+.foodcarder {
+  width: 50vmin;
+  height: 40vmin;
+  background-color: #2B7a78 !important;
+  border-radius: 2rem !important;
+  font-family: 'Barlow Semi Condensed', sans-serif !important;
+  text-transform: none !important;
+  margin: 0.5rem !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+}
+
+.foodcarder h2 {
+  font-size: 9vmin;
+}
+
+.foodcarder h3 {
+  font-size: 200%;
+  overflow-wrap: break-word;  
+  word-wrap: break-word; 
+  word-break: break-word;
+}

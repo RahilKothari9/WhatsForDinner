@@ -11,6 +11,7 @@ import AddItem from './components/AddItem'
 import Private from './components/Private'
 import { ThemeProvider } from '@emotion/react'
 import Header from './components/Header'
+import Random from './components/Random'
 
 function App() {
     const [sectionId, setSectionId] = useState("")
@@ -30,6 +31,9 @@ function App() {
               </Route>
               <Route path='/section' element={<Private/>}>
                     <Route path='/section/:section_id' element={<Section />}/>
+              </Route>
+              <Route path='/random' element={<Private/>}>
+                    <Route path='/random' element={<Random />}/>
               </Route>
               <Route exact path='/addadish' element={<Private/>}>
                     <Route path='/addadish/:section_id' element={<AddItem sectionId={sectionId} setSectionId={setSectionId}/>}/>

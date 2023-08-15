@@ -107,6 +107,7 @@ export default function Dashboard({sectionId, setSectionId}) {
     <button className="right-corder-container-button"
       onMouseEnter={()=>setLongState("long-text show-long-text")}
       onMouseLeave={()=>setLongState("long-text")}
+      onClick={()=>navigate(`random`)}
     >
         <span className="short-text">?</span>
         <span className={longState} id="test">Random Dish!</span>
