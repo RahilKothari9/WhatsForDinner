@@ -69,7 +69,6 @@ const AddItem = ({sectionId, setSectionId}) => {
                     label="Descriprtion/Recipe"
                     
                     inputRef={dishDescRef}
-                    
                     fullWidth
                     
                     sx={{mb: 4}}
