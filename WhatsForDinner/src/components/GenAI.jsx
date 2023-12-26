@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown'
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 
+
 const genAI = new GoogleGenerativeAI(import.meta.env.VITE_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
@@ -14,7 +15,7 @@ function GenAI() {
     async function run(pro) {
         
       
-        const prompt = "10 word story";
+        const prompt = "How to win at Scribbl.io the game";
       
         const result = await model.generateContent(prompt);
         
@@ -28,9 +29,9 @@ function GenAI() {
         run()
     }, []);
     
-    console.log(text1)
+    //console.log(text1)
   return (
-    <h4>{text1}</h4>
+    <h4><ReactMarkdown>{text1}</ReactMarkdown></h4>
   )
 }
 
