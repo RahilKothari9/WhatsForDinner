@@ -12,6 +12,7 @@ import Private from './components/Private'
 import { ThemeProvider } from '@emotion/react'
 import Header from './components/Header'
 import Random from './components/Random'
+import GenAI from './components/GenAI'
 
 function App() {
     const [sectionId, setSectionId] = useState("")
@@ -43,6 +44,7 @@ function App() {
               </Route>
               <Route path='/register' element={<Signup/>} />
               <Route path='/login' element={<Login/>}/>
+              <Route exact path='/ai' element={<GenAI/>}/>
             </Routes>
           </AuthProvider>
         </Router>
