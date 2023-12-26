@@ -66,7 +66,27 @@ const Signup = () => {
                     inputRef={emailRef}
                     fullWidth
                     required
-                    sx={{mb: 4}}
+                    InputLabelProps={{
+                        style: { color: "white" },
+                      }}
+                      sx={{
+                        ".css-x2l1vy-MuiInputBase-root-MuiOutlinedInput-root": {
+                          color: "white",
+                        },
+                        mb: 4,
+                      }}
+                      InputProps={{
+                        sx: {
+                          ".css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
+                            border: "2px solid white",
+                          },
+                          "&:hover": {
+                            ".css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
+                              border: "2px solid white",
+                            },
+                          },
+                        },
+                      }}
                 />
             
                 <TextField
@@ -79,7 +99,27 @@ const Signup = () => {
                     
                     required
                     fullWidth
-                    sx={{mb: 4}}
+                    InputLabelProps={{
+                        style: { color: "white" },
+                      }}
+                      sx={{
+                        ".css-x2l1vy-MuiInputBase-root-MuiOutlinedInput-root": {
+                          color: "white",
+                        },
+                        mb: 4,
+                      }}
+                      InputProps={{
+                        sx: {
+                          ".css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
+                            border: "2px solid white",
+                          },
+                          "&:hover": {
+                            ".css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
+                              border: "2px solid white",
+                            },
+                          },
+                        },
+                      }}
                 />
 
                 <TextField
@@ -91,7 +131,27 @@ const Signup = () => {
                     
                     required
                     fullWidth
-                    sx={{mb: 4}}
+                    InputLabelProps={{
+                        style: { color: "white" },
+                      }}
+                      sx={{
+                        ".css-x2l1vy-MuiInputBase-root-MuiOutlinedInput-root": {
+                          color: "white",
+                        },
+                        mb: 4,
+                      }}
+                      InputProps={{
+                        sx: {
+                          ".css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
+                            border: "2px solid white",
+                          },
+                          "&:hover": {
+                            ".css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
+                              border: "2px solid white",
+                            },
+                          },
+                        },
+                      }}
                 />
                 
                 <Button disabled= {loading} variant="outlined" className='font submitButton' type="submit">Register</Button>

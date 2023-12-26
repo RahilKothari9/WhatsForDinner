@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { TextField, Button, Container, Stack, Alert, Card } from '@mui/material';
 
 
 
@@ -11,11 +12,13 @@ const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
 
 function GenAI() {
-    const [text1, setText1] = useState('Loading....')
+    const [text1, setText1] = useState('')
+    const promptRef = useRef()
+    
     async function run(pro) {
-        
+        setText1('Loading....')
       
-        const prompt = "How to win at Scribbl.io the game";
+        const prompt = pro;
       
         const result = await model.generateContent(prompt);
         
@@ -25,13 +28,55 @@ function GenAI() {
         //const format1 = text.replace(/(?:\r\n|\r|\n)/g, '<br>')
         setText1(text);
       }
-    useEffect(()=>{
-        run()
-    }, []);
+    // useEffect(()=>{
+    //     run()
+    // }, []);
+    
+    async function handleSubmit()
+    {
+      run(promptRef.current.value)
+    }
     
     //console.log(text1)
   return (
-    <h4><ReactMarkdown>{text1}</ReactMarkdown></h4>
+    <>
+    <div>
+                <TextField
+                    type="text"
+                    
+                    label="Prompt"
+                    //className='font'
+                    inputRef={promptRef}
+                    fullWidth
+                    required
+                    
+            InputLabelProps={{
+              style: { color: "white" },
+            }}
+            sx={{
+              ".css-x2l1vy-MuiInputBase-root-MuiOutlinedInput-root": {
+                color: "white",
+              },
+              mb: 2,
+            }}
+            InputProps={{
+              sx: {
+                ".css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
+                  border: "2px solid white",
+                },
+                "&:hover": {
+                  ".css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
+                    border: "2px solid white",
+                  },
+                },
+              },
+            }}
+            size="medium"
+                />
+              <Button variant="outlined" className='font submitButton' onClick={handleSubmit}>Generate</Button>
+      </div>
+    <div><ReactMarkdown>{text1}</ReactMarkdown></div>
+    </>
   )
 }
 
