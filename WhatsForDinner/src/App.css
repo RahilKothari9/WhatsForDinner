@@ -223,3 +223,8 @@ width: auto;
   word-wrap: break-word; 
   word-break: break-word;
 }
+
+.GenAiText {
+  font-size: larger;
+  text-align: justify;
+}

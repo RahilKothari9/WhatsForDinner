@@ -76,7 +76,7 @@ function GenAI() {
                 />
               <Button variant="outlined" className='font submitButton' onClick={handleSubmit}>Generate</Button>
       </div>
-    <div><ReactMarkdown>{text1}</ReactMarkdown></div>
+    <div className='GenAiText'><ReactMarkdown>{text1}</ReactMarkdown></div>
     </>
   )
 }
