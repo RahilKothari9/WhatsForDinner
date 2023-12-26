@@ -51,7 +51,7 @@ function GenAI() {
                     required
                     
             InputLabelProps={{
-              style: { color: "white" },
+              style: { color: "white", fontFamily: "Barlow Semi Condensed" },
             }}
             sx={{
               ".css-x2l1vy-MuiInputBase-root-MuiOutlinedInput-root": {
@@ -69,6 +69,7 @@ function GenAI() {
                     border: "2px solid white",
                   },
                 },
+                fontFamily: "Barlow Semi Condensed"
               },
             }}
             size="medium"
